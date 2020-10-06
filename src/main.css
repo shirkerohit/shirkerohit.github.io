@@ -1,0 +1,14 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+@import "tailwindcss/base";
+
+/* @import "tailwindcss/components"; */
+
+@import "tailwindcss/utilities";
