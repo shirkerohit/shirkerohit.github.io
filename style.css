@@ -612,12 +612,6 @@ video {
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
 
-.bg-gray-300{
-  --bg-opacity: 1;
-  background-color: #e2e8f0;
-  background-color: rgba(226, 232, 240, var(--bg-opacity));
-}
-
 .bg-gray-400{
   --bg-opacity: 1;
   background-color: #cbd5e0;
@@ -635,11 +629,7 @@ video {
 }
 
 .bg-about{
-  background-image: url(04ab26f1d6582da0e400181898e96c35.jpg);
-}
-
-.bg-opacity-25{
-  --bg-opacity: 0.25;
+  background-image: url(d0618f372d6fddcc1dbc82ffed93be2e.jpg);
 }
 
 .bg-center{
@@ -648,10 +638,6 @@ video {
 
 .bg-no-repeat{
   background-repeat: no-repeat;
-}
-
-.bg-cover{
-  background-size: cover;
 }
 
 .rounded-full{
@@ -702,6 +688,10 @@ video {
   justify-content: space-around;
 }
 
+.flex-grow-0{
+  flex-grow: 0;
+}
+
 .font-sans{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -738,10 +728,6 @@ video {
   height: 100%;
 }
 
-.text-xs{
-  font-size: 0.75rem;
-}
-
 .text-lg{
   font-size: 1.125rem;
 }
@@ -752,10 +738,6 @@ video {
 
 .text-2xl{
   font-size: 1.5rem;
-}
-
-.text-3xl{
-  font-size: 1.875rem;
 }
 
 .text-4xl{
@@ -798,10 +780,6 @@ video {
   margin-right: 2rem;
 }
 
-.mt-10{
-  margin-top: 2.5rem;
-}
-
 .mb-10{
   margin-bottom: 2.5rem;
 }
@@ -818,12 +796,12 @@ video {
   padding: 1rem;
 }
 
-.p-10{
-  padding: 2.5rem;
+.p-5{
+  padding: 1.25rem;
 }
 
-.pt-0{
-  padding-top: 0;
+.p-10{
+  padding: 2.5rem;
 }
 
 .pr-3{
@@ -836,10 +814,6 @@ video {
 
 .pr-5{
   padding-right: 1.25rem;
-}
-
-.pt-16{
-  padding-top: 4rem;
 }
 
 .fixed{
@@ -1019,6 +993,10 @@ video {
 }
 
 @media (min-width: 640px){
+  .sm\:bg-cover{
+    background-size: cover;
+  }
+
   .sm\:text-xs{
     font-size: 0.75rem;
   }
@@ -1027,16 +1005,24 @@ video {
     font-size: 1.5rem;
   }
 
-  .sm\:text-6xl{
-    font-size: 4rem;
+  .sm\:text-4xl{
+    font-size: 2.25rem;
+  }
+
+  .sm\:mt-2{
+    margin-top: 0.5rem;
+  }
+
+  .sm\:mb-5{
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:pt-8{
+    padding-top: 2rem;
   }
 }
 
 @media (min-width: 768px){
-  .md\:bg-left{
-    background-position: left;
-  }
-
   .md\:bg-cover{
     background-size: cover;
   }
@@ -1045,18 +1031,38 @@ video {
     font-size: 1.5rem;
   }
 
-  .md\:text-7xl{
-    font-size: 5rem;
+  .md\:text-3xl{
+    font-size: 1.875rem;
   }
 }
 
 @media (min-width: 1024px){
-  .lg\:bg-cover{
-    background-size: cover;
+  .lg\:text-xl{
+    font-size: 1.25rem;
+  }
+
+  .lg\:text-7xl{
+    font-size: 5rem;
+  }
+
+  .lg\:mt-10{
+    margin-top: 2.5rem;
+  }
+
+  .lg\:mb-10{
+    margin-bottom: 2.5rem;
+  }
+
+  .lg\:mb-12{
+    margin-bottom: 3rem;
   }
 
   .lg\:mb-24{
     margin-bottom: 6rem;
+  }
+
+  .lg\:pt-16{
+    padding-top: 4rem;
   }
 }
 
