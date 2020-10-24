@@ -319,7 +319,7 @@ nav {
 
     /* About Starts */
     .about , .blogs, .reach-me, .social {
-        min-height: 200%;
+        min-height: 150%;
         text-align: inherit;
         line-height: 1.8rem;
     }
