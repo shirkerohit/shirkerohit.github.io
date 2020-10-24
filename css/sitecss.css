@@ -99,6 +99,7 @@ nav {
     justify-content: center;
     align-items: center;
     line-height: 4rem;
+    padding:1rem;
 }
 
 .section-heading {
@@ -310,20 +311,27 @@ nav {
     }
     /* Show case ends */
 
+    /* Menu Start */
+    .menu > ul {
+        padding:0;
+    }
+    /* Menu ends */
+
     /* About Starts */
     .about , .blogs, .reach-me, .social {
+        min-height: 200%;
         text-align: inherit;
         line-height: 1.8rem;
-        padding : 0 2em;
     }
 
     .text-about, .text-blogs{
         margin : 0 1rem;
-        line-height: 2rem;
+        font-size: 0.8rem;
+        line-height: 2.2em;
     }
 
     .text-about > p , .text-blogs > p {
-        font-size:1.2rem;
+        font-size:0.7rem;
     }
     /* About ends */
 
@@ -350,13 +358,9 @@ nav {
 
     /* Blogs start */
 
-    .blogs{
-        margin-top:4rem;
-    }
-
     .medium-articles > ul  > li {
-        font-size: 0.8em;
-        padding-bottom: 0.2em;
+        font-size: 0.8rem;
+        padding-bottom: 0.2rem;
     }
     .medium-articles {
         padding-bottom: 0.5em;
