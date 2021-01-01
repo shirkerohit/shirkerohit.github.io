@@ -191,6 +191,8 @@ nav {
 
 /* Blogs starts */
 .blogs{
+    height:150%;
+    flex-grow: 1;
     margin-top:2rem;
 }
 
@@ -323,7 +325,7 @@ nav {
 
     /* About Starts */
     .about , .blogs, .reach-me, .social {
-        min-height: 150%;
+        min-height: 100%;
         text-align: inherit;
         line-height: 1.8rem;
     }
@@ -375,4 +377,10 @@ nav {
         padding: 0rem;
     }
     /* Blogs ends */
+}
+
+@media only screen and (max-width: 1224px) and (max-device-width: 991px) {
+    .blogs{
+        height: 200%;
+    }
 }
