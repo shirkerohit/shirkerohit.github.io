@@ -8,7 +8,7 @@ window.onload = () => {
         articles = localStorage.getItem('articles');
         refresh = refreshFeed();
     }
-
+    articles = null;
     if (articles == null || refresh == true) {
         fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40rohit-shirke', {
             method: 'get',
@@ -25,7 +25,7 @@ window.onload = () => {
                 let keys = ['title', 'thumbnail', 'pubDate', 'link', 'content']
                 var newList = items.map(element => {
                     if (element.categories.length > 0) {
-                        const obj = {};
+                        let obj = {};
                         keys.map((i, j) => {
                             if (i == "content") {
                                 content = element[i];
@@ -75,7 +75,7 @@ function refreshFeed () {
     if (lastSaved) {
         let today = Date.parse(new Date());
         let saved = Date.parse(lastSaved);
-        let timeDiff = (today - saved) / (24 * 60 * 60 * 1000);
+        let timeDiff = (today - saved) / (6 * 60 * 60 * 1000);
         if ((timeDiff != null || timeDiff != undefined) && timeDiff > 1) {
             return true;
         }
