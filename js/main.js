@@ -1,5 +1,6 @@
 var articles = {};
 var lastSaved = null;
+const REFRESH_INTEVAL = (2 * 60 * 60 * 1000); // 2 hours
 
 window.onload = () => {
     let refresh = true;
@@ -29,10 +30,10 @@ window.onload = () => {
                         keys.map((i, j) => {
                             if (i == "content") {
                                 content = element[i];
-                                element[i] = content.slice(0, 500);
+                                element[i] = content.slice(0, 300).concat(" ...");
+                                // element[i] = element[i].replace(/<figure>/g, "").replace(/<img[^>]*>/g, ""); //wip
                             }
                             obj[i] = element[i];
-                            // console.log(element[i]);
                         })
                         return obj;
                     }
@@ -59,7 +60,7 @@ function parseAndShowArticles (obj) {
     let div = document.getElementById('medium-articles');
     div.innerHTML = "";
     obj.map(element => {
-        div.innerHTML += `<ul> <li><a href="${element.link}">${element.title}</a></p><p class="medium-pub-date">Published on : ${element.pubDate}</li></ul>`
+        div.innerHTML += `<ul> <li><a href="${element.link}">${element.title}</a></p><p class="medium-pub-date">Published on : ${element.pubDate}</li></ul>`;
     });
 }
 
@@ -75,7 +76,7 @@ function refreshFeed () {
     if (lastSaved) {
         let today = Date.parse(new Date());
         let saved = Date.parse(lastSaved);
-        let timeDiff = (today - saved) / (6 * 60 * 60 * 1000);
+        let timeDiff = (today - saved) / REFRESH_INTEVAL;
         if ((timeDiff != null || timeDiff != undefined) && timeDiff > 1) {
             return true;
         }
