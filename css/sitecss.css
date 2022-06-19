@@ -116,10 +116,16 @@ nav {
     margin : 0 18rem;
 }
 
-.text-about > p, .text-blogs > p {
+.text-about > p {
+    font-family: monospace;
+    word-wrap: break-word;
     font-size: 1.4rem;
 }
 
+.text-blogs > p {
+    word-wrap: break-word;
+    font-size: 1.4rem;
+}
 /* Comman section ends. */
 
 /* Showcase begins. */
