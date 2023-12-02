@@ -55,23 +55,23 @@ window.onload = () => {
     }
 }
 
-function parseAndShowArticles (obj) {
+function parseAndShowArticles(obj) {
     obj = JSON.parse(obj);
     let div = document.getElementById('medium-articles');
     div.innerHTML = "";
     obj.map(element => {
-        div.innerHTML += `<ul> <li><a href="${element.link}">${element.title}</a></p><p class="medium-pub-date">Published on : ${element.pubDate}</li></ul>`;
+        div.innerHTML += `<div class="medium-articles-div"><div class="medium-articles-subdiv"><a href="${element.link}" target="_blank">${element.title}</a></p><p class="medium-pub-date">Published on : ${element.pubDate}</div></div>`;
     });
 }
 
-function checkIfStorageSupported () {
+function checkIfStorageSupported() {
     if (typeof Storage != undefined) {
         return true;
     }
     return false;
 }
 
-function refreshFeed () {
+function refreshFeed() {
     let lastSaved = localStorage.getItem('lastSaved');
     if (lastSaved) {
         let today = Date.parse(new Date());
