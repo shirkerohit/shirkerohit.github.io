@@ -449,6 +449,12 @@ nav {
     /* Blogs ends */
 }
 
+@media only screen and (max-width: 768px) {
+    .medium-articles-div {
+        flex: 1 0 100% !important;
+    }
+}
+
 @media only screen and (max-width: 1224px) and (max-device-width: 991px) {
     .blogs {
         height: 200%;
