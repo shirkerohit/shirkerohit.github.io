@@ -53,6 +53,45 @@ window.onload = () => {
     } else {
         parseAndShowArticles(articles);
     }
+
+    loadPageTheme();
+}
+
+function loadPageTheme() {
+    let theme = localStorage.getItem('theme');
+    if (theme == "dark") {
+        setDarkMode();
+    } else {
+        setLightMode();
+    }
+}
+
+function setLightMode() {
+    document.body.classList.remove('dark-mode');
+    document.querySelector('nav').classList.remove('dark-mode');
+    const icon = document.getElementById('dark-mode-icon');
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'light');
+}
+
+function setDarkMode() {
+    document.body.classList.add('dark-mode');
+    document.querySelector('nav').classList.add('dark-mode');
+    const icon = document.getElementById('dark-mode-icon');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'dark');
+}
+
+
+function toggleDarkMode() {
+    let theme = localStorage.getItem('theme');
+    if (theme == "light" || theme == undefined) {
+        setDarkMode();
+    } else {
+        setLightMode();
+    }
 }
 
 function parseAndShowArticles(obj) {
@@ -84,3 +123,11 @@ function refreshFeed() {
     }
     return true;
 }
+
+// Adjust the width of the typewriter element on mobile
+window.addEventListener('load', () => {
+    const typewriter = document.querySelector('.typewriter h4');
+    if (window.innerWidth <= 768) {
+        typewriter.style.width = `${typewriter.scrollWidth}px`;
+    }
+});

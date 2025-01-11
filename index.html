@@ -29,151 +29,8 @@
         gtag('config', 'G-5TW2PZ84QR');
     </script>
     <style>
-        .showcase {
-            background: url('images/geeky-background.jpg') no-repeat center center/cover;
-            color: #000;
-            /* Changed text color to black */
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .name {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffcc00;
-        }
-
-        .typewriter h4 {
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end;
-            /* Added infinite loop */
-        }
-
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 100%
-            }
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: orange
-            }
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        nav.dark-mode {
-            background-color: #333;
-        }
-
-        .dark-mode .showcase {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-
-        .dark-mode .about,
-        .dark-mode .reach-me {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-
-        .dark-mode .social {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-
-        .dark-mode .footer {
-            background-color: #333;
-            color: #ffffff;
-        }
-
-        .dark-mode-toggle {
-            cursor: pointer;
-            font-size: 1.5em;
-        }
-
         /* About section styles */
-        .about {
-            background-color: #282c34;
-            color: #61dafb;
-            padding: 2rem;
-            text-align: left;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .about .section-heading {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            color: #61dafb;
-        }
-
-        .about .section-heading::after {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background: #61dafb;
-            display: block;
-            margin: 0.5rem 0;
-        }
-
-        .about .text-about {
-            font-size: 1.2rem;
-            line-height: 1.8rem;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        .about .text-about p {
-            margin-bottom: 1rem;
-        }
-
-        .about .text-about p span {
-            color: #61dafb;
-            font-weight: bold;
-        }
-
-        .about .text-about p:hover {
-            color: #21a1f1;
-            transition: color 0.3s;
-        }
     </style>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('nav').classList.toggle('dark-mode');
-            const icon = document.getElementById('dark-mode-icon');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-    </script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -182,7 +39,7 @@
     <nav>
         <div class="menu">
             <ul>
-                <li><a href="javascript:void(0);" onclick="toggleDarkMode()">
+                <li><a href="javascript:void(0);" onclick="toggleDarkMode();">
                         <i id="dark-mode-icon"
                             class="fas fa-moon dark-mode-toggle"></i>
                     </a></li>
@@ -196,8 +53,11 @@
         <div class="showcase vh-100">
             <h2>Hey there, I'm <span class="name">Rohit P. Shirke.</span></h2>
             <div class="typewriter">
-                <h4>I am a full-stack developer & AI Enthusiast from Mumbai,
-                    Maharashtra, India</h4>
+                <h4>
+                    I am a full-stack developer &
+                    AI Enthusiast from Mumbai,
+                    Maharashtra, India
+                </h4>
             </div>
         </div>
     </section>
@@ -331,6 +191,7 @@
         </div>
     </footer>
     <script async type="text/javascript" src="/js/main.js"></script>
+    <script async type="text/javascript" src="/js/script.js"></script>
     <!-- <script data-name="BMC-Widget" data-cfasync="false"
         src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
         data-id="rohit.shirke" data-description="Support me on Buy me a coffee!"
