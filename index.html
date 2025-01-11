@@ -28,24 +28,48 @@
         gtag('js', new Date());
         gtag('config', 'G-5TW2PZ84QR');
     </script>
+    <style>
+        /* About section styles */
+    </style>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <nav>
         <div class="menu">
             <ul>
-                <li><a href="#about" name="about">About</a></li>
-                <!-- <li><a href="#work">Work</a></li> -->
-                <li><a href="#blogs" name="blogs">Blogs</a></li>
-                <li><a href="#social" name="contact">Contact</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleDarkMode();">
+                        <i id="dark-mode-icon"
+                            class="fas fa-moon dark-mode-toggle"></i>
+                    </a></li>
+                <li><a href="#about" name="about">#About_Me</a></li>
+                <li><a href="#blogs" name="blogs">#My_Blogs</a></li>
+                <li><a href="#social" name="contact">#Contact_Me</a></li>
             </ul>
         </div>
     </nav>
     <section name="showcase" id="showcase">
         <div class="showcase vh-100">
             <h2>Hey there, I'm <span class="name">Rohit P. Shirke.</span></h2>
-            <h4>I am a full-stack developer & AI Enthusiatic from Mumbai,
-                Maharashtra, India</h4>
+            <div class="typewriter typewriter-desktop">
+                <h4>
+                    I am a full-stack developer &
+                    AI Enthusiast from Mumbai,
+                    Maharashtra, India
+                </h4>
+            </div>
+            <div class="typewriter typewriter-mobile">
+                <h4>
+                    I am a full-stack developer &
+                </h4>
+                <h4>
+                    AI Enthusiast from Mumbai,
+                </h4>
+                <h4>
+                    Maharashtra, India
+                </h4>
+            </div>
         </div>
     </section>
     <section name="about" id="about">
@@ -56,8 +80,9 @@
                     Greetings, I am a dedicated full-time software developer and
                     technology enthusiast with a strong
                     inclination towards staying abreast of emerging trends in
-                    the tech industry.(Currently Exploring AI domain!) </p>
-                <p>&nbsp;</p>
+                    the tech industry. <span>(Currently Exploring AI
+                        domain!)</span>
+                </p>
                 <p>
                     I work as a full-stack developer with strong proficiency in
                     backend technologies
@@ -72,9 +97,8 @@
                     working with a variety of tech stacks, including C++,
                     ASP.NET (C#), and Java.
                 </p>
-                </p>
-                <p>&nbsp;</p>
-                <p>During my leisure hours, I immerse myself in reading
+                <p>
+                    During my leisure hours, I immerse myself in reading
                     insightful blogs, occasional gaming, and
                     enjoying movies. Additionally, I maintain an interest in
                     cricket...<span class="blinker">|</span>
@@ -178,6 +202,7 @@
         </div>
     </footer>
     <script async type="text/javascript" src="/js/main.js"></script>
+    <script async type="text/javascript" src="/js/script.js"></script>
     <!-- <script data-name="BMC-Widget" data-cfasync="false"
         src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
         data-id="rohit.shirke" data-description="Support me on Buy me a coffee!"

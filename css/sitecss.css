@@ -13,6 +13,14 @@ a:visited {
     color: #000;
 }
 
+.dark-mode a:visited {
+    color: #fff;
+}
+
+.dark-mode .svg-sm {
+    fill: #fff;
+}
+
 ul>li {
     text-decoration: none;
     list-style: none;
@@ -165,6 +173,68 @@ nav {
     color: #000;
 }
 
+.showcase>.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.typewriter h4 {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end, hide-border 0s 3.5s forwards;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    /* Ensure it fits within the viewport */
+}
+
+.typewriter-desktop {
+    display: block;
+}
+
+.typewriter-mobile {
+    display: none;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange
+    }
+}
+
+@keyframes hide-border {
+    to {
+        border-color: transparent;
+    }
+}
+
+@keyframes show-hide {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Showcase ends. */
 
 /* About starts */
@@ -203,6 +273,51 @@ nav {
     text-align: center;
     color: rgb(141, 138, 138);
     padding: 1em 0;
+}
+
+.about {
+    background-color: #282c34;
+    color: #61dafb;
+    padding: 2rem;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about .section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #61dafb;
+}
+
+.about .section-heading::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #61dafb;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.about .text-about {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.about .text-about p {
+    margin-bottom: 1rem;
+}
+
+.about .text-about p span {
+    color: #61dafb;
+    font-weight: bold;
+}
+
+.about .text-about p:hover {
+    color: #21a1f1;
+    transition: color 0.3s;
 }
 
 /* About ends. */
@@ -347,6 +462,36 @@ nav {
     background-color: #000;
 }
 
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+nav.dark-mode {
+    background-color: #333;
+}
+
+.dark-mode .showcase {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .about,
+.dark-mode .reach-me {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .social {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .footer {
+    background-color: #333;
+    color: #ffffff;
+}
 
 @media only screen and (max-width: 1224px) {
 
@@ -380,6 +525,8 @@ nav {
     /* Menu Start */
     .menu>ul {
         padding: 0;
+        justify-content: space-evenly;
+        font-size: x-small;
     }
 
     /* Menu ends */
@@ -453,6 +600,36 @@ nav {
 @media only screen and (max-width: 768px) {
     .medium-articles-div {
         flex: 1 0 100% !important;
+    }
+
+    .typewriter-desktop {
+        display: none;
+    }
+
+    .typewriter-mobile {
+        display: block;
+    }
+
+    .typewriter-mobile h4 {
+        opacity: 0;
+    }
+
+    .typewriter-mobile h4:nth-child(1) {
+        animation: typing 1.5s steps(40, end), blink-caret .75s step-end, hide-border 0s 3.5s forwards, show-hide 2s linear;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+
+    .typewriter-mobile h4:nth-child(2) {
+        animation: typing 1.5s steps(40, end) 7s, blink-caret .75s step-end 7s, hide-border 0s 3.5s forwards, show-hide 2s linear 7s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+
+    .typewriter-mobile h4:nth-child(3) {
+        animation: typing 1.5s steps(40, end) 14s, blink-caret .75s step-end 14s, hide-border 0s 17.5s forwards, show-hide 2s linear 14s;
+        animation-fill-mode: forwards;
+        animation-delay: 4s;
     }
 }
 
