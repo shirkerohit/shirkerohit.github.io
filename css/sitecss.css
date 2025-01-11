@@ -191,6 +191,14 @@ nav {
     /* Ensure it fits within the viewport */
 }
 
+.typewriter-desktop {
+    display: block;
+}
+
+.typewriter-mobile {
+    display: none;
+}
+
 @keyframes typing {
     from {
         width: 0
@@ -216,6 +224,14 @@ nav {
 @keyframes hide-border {
     to {
         border-color: transparent;
+    }
+}
+
+@keyframes show-hide {
+
+    0%,
+    100% {
+        opacity: 1;
     }
 }
 
@@ -510,6 +526,7 @@ nav.dark-mode {
     .menu>ul {
         padding: 0;
         justify-content: space-evenly;
+        font-size: x-small;
     }
 
     /* Menu ends */
@@ -583,6 +600,36 @@ nav.dark-mode {
 @media only screen and (max-width: 768px) {
     .medium-articles-div {
         flex: 1 0 100% !important;
+    }
+
+    .typewriter-desktop {
+        display: none;
+    }
+
+    .typewriter-mobile {
+        display: block;
+    }
+
+    .typewriter-mobile h4 {
+        opacity: 0;
+    }
+
+    .typewriter-mobile h4:nth-child(1) {
+        animation: typing 1.5s steps(40, end), blink-caret .75s step-end, hide-border 0s 3.5s forwards, show-hide 2s linear;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+
+    .typewriter-mobile h4:nth-child(2) {
+        animation: typing 1.5s steps(40, end) 7s, blink-caret .75s step-end 7s, hide-border 0s 3.5s forwards, show-hide 2s linear 7s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+
+    .typewriter-mobile h4:nth-child(3) {
+        animation: typing 1.5s steps(40, end) 14s, blink-caret .75s step-end 14s, hide-border 0s 17.5s forwards, show-hide 2s linear 14s;
+        animation-fill-mode: forwards;
+        animation-delay: 4s;
     }
 }
 
