@@ -347,6 +347,36 @@ nav {
     background-color: #000;
 }
 
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+nav.dark-mode {
+    background-color: #333;
+}
+
+.dark-mode .showcase {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .about,
+.dark-mode .reach-me {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .social {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .footer {
+    background-color: #333;
+    color: #ffffff;
+}
 
 @media only screen and (max-width: 1224px) {
 
