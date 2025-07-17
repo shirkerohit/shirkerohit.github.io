@@ -149,10 +149,10 @@ nav {
 /* Showcase begins. */
 
 .showcase h2 {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 500;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: none;
 }
 
 .showcase h3 {
@@ -637,4 +637,38 @@ nav.dark-mode {
     .blogs {
         height: 200%;
     }
+}
+
+.showcase-content {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+}
+
+.twitter-feed {
+    padding: 2rem;
+    text-align: center;
 }

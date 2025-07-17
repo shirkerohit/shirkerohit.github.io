@@ -99,7 +99,7 @@ function parseAndShowArticles(obj) {
     let div = document.getElementById('medium-articles');
     div.innerHTML = "";
     obj.map(element => {
-        div.innerHTML += `<div class="medium-articles-div"><div class="medium-articles-subdiv"><a href="${element.link}" target="_blank">${element.title}</a></p><p class="medium-pub-date">Published on : ${element.pubDate}</div></div>`;
+        div.innerHTML += `<div class="medium-articles-div"><div class="medium-articles-subdiv"><h3><a href="${element.link}" target="_blank">${element.title}</a></h3><p>${element.content}</p><p class="medium-pub-date">Published on : ${element.pubDate}</p></div></div>`;
     });
 }
 
