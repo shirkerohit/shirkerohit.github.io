@@ -5,7 +5,7 @@ const FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmed
 const ARTICLE_CACHE_KEY = 'rohit-medium-articles';
 const ARTICLE_CACHE_TIME_KEY = 'rohit-medium-articles-saved-at';
 const ARTICLE_FRESHNESS_MS = 1000 * 60 * 60 * 2;
-const HERO_COPY_TEXT = 'I am Rohit Shirke, a software developer and AI engineer building reliable web applications, backend systems, and AI-native products with a focus on observability and practical engineering.';
+const HERO_COPY_TEXT = 'I build backend systems, AI-native products, and developer tools with a bias for reliability, observability, and practical usefulness.';
 
 const socialLinks = [
     {
@@ -156,8 +156,8 @@ function HomePage({ articles, loading, error, theme, onToggleTheme }) {
     const [heroCopy, setHeroCopy] = useState('');
 
     useEffect(() => {
-        const title = 'Rohit Shirke | Software Developer & AI Engineer';
-        const description = 'Rohit Shirke is a software developer and AI engineer building reliable web applications, backend systems, and AI-native products.';
+        const title = 'Rohit Shirke | Software Engineer & AI Enthusiast';
+        const description = 'Rohit Shirke is a software engineer and AI enthusiast building reliable web applications, backend systems, and AI-native products.';
 
         document.title = title;
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -201,10 +201,10 @@ function HomePage({ articles, loading, error, theme, onToggleTheme }) {
             <main id="top">
                 <section className="hero">
                     <div className="hero-main">
-                        <p className="eyebrow">Software Developer • AI Engineer • Web Engineer</p>
+                        <p className="eyebrow">Software engineer • AI systems thinker</p>
                         <h1>
                             <span className="hero-greeting">Hey there, </span>
-                            <span className="hero-name">I'm Rohit Shirke</span>
+                            <span className="hero-name">I'm Rohit P. Shirke</span>
                         </h1>
                         <p className="hero-copy" aria-label={HERO_COPY_TEXT}>
                             <span>{heroCopy}</span>
@@ -234,13 +234,13 @@ function HomePage({ articles, loading, error, theme, onToggleTheme }) {
                     </div>
                     <div className="about">
                         <p>
-                            I’m Rohit Shirke, a software developer and AI engineer with over a decade of experience building reliable systems across backend engineering, cloud platforms, web development, APIs, and modern product delivery.
+                            I’m a software engineer with over a decade of experience building systems across software architecture, backend engineering, cloud-native platforms, APIs, and modern frontend development.
                         </p>
                         <p>
-                            I’ve built production applications using microservices, event-driven systems, containerized deployments, and cloud infrastructure. I care deeply about system design, performance, reliability, observability, and developer experience.
+                            I’ve architected and delivered production applications using microservices, event-driven systems, containerized deployments, and cloud infrastructure. I enjoy balancing system design, performance, reliability, and developer experience.
                         </p>
                         <p>
-                            My recent work spans AI-native software, LLM applications, RAG systems, agentic workflows, orchestration, evaluation pipelines, and integrating AI capabilities into practical product ecosystems.
+                            I currently lead engineering work across product domains, with recent focus on AI-native software: LLM applications, RAG systems, agentic workflows, orchestration, evaluation pipelines, and integrating AI capabilities into existing product ecosystems.
                         </p>
                     </div>
                     <div className="signal-grid" aria-label="Engineering perspective">
