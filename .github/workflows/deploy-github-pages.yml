@@ -3,9 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
       - master
-      - site/v3
   workflow_dispatch:
 
 jobs:
