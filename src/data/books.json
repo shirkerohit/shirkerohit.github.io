@@ -1,0 +1,84 @@
+{
+    "technical": [
+        {
+            "title": "Programming with Java: A Primer, 4e",
+            "author": "E. Balagurusamy",
+            "category": "Programming & Java",
+            "amazon": "https://link.amazon/B09OgRWbe"
+        },
+        {
+            "title": "Database System Concepts (3rd Edition)",
+            "author": "Abraham Silberschatz, Henry F. Korth, S. Sudarshan",
+            "category": "Databases & Computer Science",
+            "amazon": "https://link.amazon/B05BBn06U"
+        },
+        {
+            "title": "Distributed Database Systems, 1e",
+            "author": "B. R. Ray",
+            "category": "Distributed Systems & Databases",
+            "amazon": "https://link.amazon/B0fNBTIxT"
+        }
+    ],
+    "nonTechnical": [
+        {
+            "title": "Atomic Habits",
+            "author": "James Clear",
+            "category": "Personal Development",
+            "amazon": "https://link.amazon/B0dHEwM3q"
+        },
+        {
+            "title": "How to Win Friends and Influence People",
+            "author": "Dale Carnegie",
+            "category": "Communication & Relationships",
+            "amazon": "https://link.amazon/B0i4OB7uI"
+        },
+        {
+            "title": "Who Moved My Cheese?",
+            "author": "Spencer Johnson",
+            "category": "Change & Adaptability",
+            "amazon": "https://link.amazon/B03DOzYu3"
+        },
+        {
+            "title": "The Psychology of Money",
+            "author": "Morgan Housel",
+            "category": "Finance & Money Mindset",
+            "amazon": "https://link.amazon/A0e74HFWK"
+        },
+        {
+            "title": "Thinking, Fast and Slow",
+            "author": "Daniel Kahneman",
+            "category": "Psychology & Decision-Making",
+            "amazon": "https://link.amazon/B03nK4mKZ"
+        },
+        {
+            "title": "Unf*** Your Brain",
+            "author": "Faith G. Harper",
+            "category": "Mental Wellness & Psychology",
+            "amazon": "https://link.amazon/B0flyrItc"
+        },
+        {
+            "title": "Life's Amazing Secrets",
+            "author": "Gaur Gopal Das",
+            "category": "Spirituality & Personal Development",
+            "amazon": "https://link.amazon/B0bD1pv8V"
+        },
+        {
+            "title": "Shyamchi Aai",
+            "author": "Sane Guruji",
+            "category": "Marathi Literature & Family Values",
+            "amazon": "https://link.amazon/B0icpZHTh"
+        },
+        {
+            "title": "Do Epic Shit",
+            "author": "Ankur Warikoo",
+            "category": "Entrepreneurship & Personal Development",
+            "amazon": "https://link.amazon/B09gwBTUL"
+        },
+        {
+            "title": "Get Epic Shit Done",
+            "author": "Ankur Warikoo",
+            "category": "Productivity & Personal Development",
+            "amazon": "https://link.amazon/B01vPabGt"
+        }
+    ]
+}
