@@ -153,6 +153,12 @@ button {
     color: var(--muted);
 }
 
+.topbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -231,7 +237,6 @@ button {
 }
 
 .hero-copy {
-    min-height: 3.5rem;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
     font-size: 0.96rem;
     font-weight: 450;
@@ -801,6 +806,10 @@ button {
         flex-wrap: wrap;
     }
 
+    .theme-toggle {
+        font-size: 1.1rem;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -839,8 +848,8 @@ button {
     }
 
     .hero-copy {
-        min-height: auto;
-        height: 4.5rem;
+        font-size: 0.82rem;
+        max-height: 5rem;
         overflow: hidden;
     }
 
@@ -910,6 +919,12 @@ button {
 
     .section-links {
         margin-top: 1rem;
+    }
+
+    .primary-link,
+    .secondary-link {
+        padding: 0.55rem 0.85rem;
+        font-size: 0.82rem;
     }
 
     .site-footer {

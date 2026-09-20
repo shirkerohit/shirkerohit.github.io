@@ -12,17 +12,27 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                         Rohit Shirke
                     </Link>
                 </div>
-                <button
-                    type="button"
-                    className={`hamburger ${menuOpen ? 'is-open' : ''}`}
-                    onClick={() => setMenuOpen((prev) => !prev)}
-                    aria-label="Toggle menu"
-                    aria-expanded={menuOpen}
-                >
-                    <span />
-                    <span />
-                    <span />
-                </button>
+                <div className="topbar-controls">
+                    <button
+                        type="button"
+                        className="theme-toggle"
+                        onClick={onToggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? '☾' : '☀'}
+                    </button>
+                    <button
+                        type="button"
+                        className={`hamburger ${menuOpen ? 'is-open' : ''}`}
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        aria-label="Toggle menu"
+                        aria-expanded={menuOpen}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </button>
+                </div>
                 <nav className={`nav-links ${menuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
                     {variant === 'home' ? (
                         <>
@@ -41,14 +51,6 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                             <a href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
                         </>
                     )}
-                    <button
-                        type="button"
-                        className="theme-toggle"
-                        onClick={onToggleTheme}
-                        aria-label="Toggle theme"
-                    >
-                        {theme === 'dark' ? '☾' : '☀'}
-                    </button>
                 </nav>
             </div>
         </header>
