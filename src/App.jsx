@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import WritingPage from './pages/WritingPage';
 import BookshelfPage from './pages/BookshelfPage';
-// import ProjectsPage from './pages/ProjectsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ExpenseTrackerIndexPage from './pages/projects/ExpenseTrackerIndexPage';
+import ExpenseTrackerPrivacyPage from './pages/projects/ExpenseTrackerPrivacyPage';
+import ExpenseTrackerTermsPage from './pages/projects/ExpenseTrackerTermsPage';
 import { loadArticles } from './utils/articleLoader';
 
 function App() {
@@ -39,6 +42,8 @@ function App() {
         fetchArticles();
     }, []);
 
+    const toggleTheme = () => setTheme((current) => (current === 'dark' ? 'light' : 'dark'));
+
     return (
         <div className="app-shell">
             <HashRouter>
@@ -52,7 +57,7 @@ function App() {
                                 loading={loading}
                                 error={error}
                                 theme={theme}
-                                onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+                                onToggleTheme={toggleTheme}
                             />
                         )}
                     />
@@ -61,19 +66,53 @@ function App() {
                         element={(
                             <BookshelfPage
                                 theme={theme}
-                                onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+                                onToggleTheme={toggleTheme}
                             />
                         )}
                     />
-                    {/* <Route
+                    <Route
                         path="/projects"
                         element={(
                             <ProjectsPage
                                 theme={theme}
-                                onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+                                onToggleTheme={toggleTheme}
                             />
                         )}
-                    /> */}
+                    />
+                    <Route
+                        path="/projects/expense-tracker"
+                        element={(
+                            <ExpenseTrackerIndexPage
+                                theme={theme}
+                                onToggleTheme={toggleTheme}
+                            />
+                        )}
+                    />
+                    <Route
+                        path="/projects/expense-tracker/privacy"
+                        element={(
+                            <ExpenseTrackerPrivacyPage
+                                theme={theme}
+                                onToggleTheme={toggleTheme}
+                            />
+                        )}
+                    />
+                    <Route
+                        path="/projects/expense-tracker/terms"
+                        element={(
+                            <ExpenseTrackerTermsPage
+                                theme={theme}
+                                onToggleTheme={toggleTheme}
+                            />
+                        )}
+                    />
+
+                    {/* Support singular alias /project */}
+                    <Route path="/project" element={<Navigate to="/projects" replace />} />
+                    <Route path="/project/expense-tracker" element={<Navigate to="/projects/expense-tracker" replace />} />
+                    <Route path="/project/expense-tracker/privacy" element={<Navigate to="/projects/expense-tracker/privacy" replace />} />
+                    <Route path="/project/expense-tracker/terms" element={<Navigate to="/projects/expense-tracker/terms" replace />} />
+
                     <Route
                         path="*"
                         element={(
@@ -82,7 +121,7 @@ function App() {
                                 loading={loading}
                                 error={error}
                                 theme={theme}
-                                onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+                                onToggleTheme={toggleTheme}
                             />
                         )}
                     />
