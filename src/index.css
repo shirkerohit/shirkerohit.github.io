@@ -141,22 +141,6 @@ button {
     width: 100%;
 }
 
-.nav-links a:hover,
-.topbar-right {
-    display: flex;
-    align-items: center;
-}
-
-.desktop-theme-wrapper {
-    display: inline-flex;
-    align-items: center;
-    margin-left: 0.25rem;
-}
-
-.mobile-theme-wrapper {
-    display: none;
-}
-
 .theme-toggle {
     border: none;
     background: transparent;
@@ -168,6 +152,14 @@ button {
     align-items: center;
     justify-content: center;
     line-height: 1;
+}
+
+.desktop-theme-toggle {
+    display: inline-flex;
+}
+
+.mobile-theme-toggle {
+    display: none !important;
 }
 
 .topbar-controls {
@@ -815,13 +807,12 @@ button {
 }
 
 @media (max-width: 800px) {
-    .desktop-theme-wrapper {
-        display: none;
+    .desktop-theme-toggle {
+        display: none !important;
     }
 
-    .mobile-theme-wrapper {
-        display: flex;
-        align-items: center;
+    .mobile-theme-toggle {
+        display: inline-flex !important;
     }
 
     .hamburger {
@@ -1540,4 +1531,63 @@ button {
     margin: 0.2rem 0 0;
     font-size: 1.1rem;
     color: var(--text);
+}
+
+@media (max-width: 800px) {
+    .legal-header {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .legal-header-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .doc-type-tag {
+        font-size: 0.68rem;
+        padding: 0.15rem 0.45rem;
+        border-radius: 4px;
+        letter-spacing: 0.04em;
+    }
+
+    .last-updated {
+        font-size: 0.78rem;
+        opacity: 0.9;
+    }
+
+    .legal-header h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .legal-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .legal-nav-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .legal-nav-footer span {
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+    }
+
+    .legal-nav-footer h4 {
+        font-size: 0.98rem;
+    }
+
+    .legal-nav-footer .btn {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+    }
 }
