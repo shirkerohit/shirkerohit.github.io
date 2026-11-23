@@ -50,8 +50,9 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
     const [heroCopy, setHeroCopy] = useState('');
 
     useEffect(() => {
-        const title = 'Rohit Shirke | Software Engineer & AI Enthusiast';
-        const description = 'Rohit Shirke is a software engineer and AI enthusiast building reliable web applications, backend systems, and AI-native products.';
+        // Primary title targeting all name variations
+        const title = 'Rohit Shirke | Senior Software Engineer & AI Enthusiast';
+        const description = 'Rohit Shirke - Senior Software Engineer at Google, Mumbai. 10+ years experience building reliable web applications, backend systems, and AI-native products. LinkedIn Top Voice. 34K+ article views. Open-source maintainer with 5K+ installations. Browser extension & VS Code extension author.';
 
         document.title = title;
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -59,11 +60,13 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
             metaDescription.setAttribute('content', description);
         }
 
+        // Canonical URL - consolidate all name variations
         const canonicalLink = document.querySelector('link[rel="canonical"]');
         if (canonicalLink) {
             canonicalLink.setAttribute('href', 'https://shirkerohit.github.io/');
         }
 
+        // Open Graph
         const ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) {
             ogTitle.setAttribute('content', title);
@@ -72,6 +75,26 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
         const ogDescription = document.querySelector('meta[property="og:description"]');
         if (ogDescription) {
             ogDescription.setAttribute('content', description);
+        }
+
+        // Twitter
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle) {
+            twitterTitle.setAttribute('content', title);
+        }
+
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDescription) {
+            twitterDescription.setAttribute('content', description);
+        }
+
+        // Structured data language
+        const metaLocale = document.querySelector('meta[name="language"]');
+        if (!metaLocale) {
+            const langMeta = document.createElement('meta');
+            langMeta.name = 'language';
+            langMeta.content = 'en-US';
+            document.head.appendChild(langMeta);
         }
     }, []);
 
@@ -96,8 +119,8 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                 <section className="hero">
                     <div className="hero-main">
                         <h1>
-                            <span className="hero-greeting">Hey there, </span>
-                            <span className="hero-name">I'm Rohit P. Shirke</span>
+                            <span className="hero-greeting">Hey there, I'm</span>
+                            <span className="hero-name">Rohit P. Shirke</span>
                         </h1>
                         <p className="eyebrow">Software engineer • AI systems thinker</p>
                         <p className="hero-copy" aria-label={HERO_COPY_TEXT}>
@@ -106,14 +129,14 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                             <span className="typing-caret" aria-hidden="true" />
                         </p>
                     </div>
-                    <aside className="hero-rail" aria-label="Current technical focus">
+                    <aside className="hero-rail field-notes" aria-label="Field notes">
                         <div className="rail-block">
                             <span className="rail-label">Current Focus</span>
                             <ul>
                                 <li>AI-native systems</li>
                                 <li>RAG & evaluation</li>
                                 <li>Agentic workflows</li>
-                                <li>Developer tooling</li>
+                                <li>System Architecture</li>
                             </ul>
                         </div>
                         <div className="rail-block">
@@ -155,7 +178,7 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                         </div>
                     </div>
                     <div className="impact-list" aria-label="Selected impact">
-                        <h4>Key Highlights</h4>
+                        <h4>Selected work</h4>
                         <p>Published technical articles with <strong>34K+ views</strong> and <strong>16K+ reads</strong></p>
                         <p>Recognized as a <strong>LinkedIn Top Voice</strong> for consistently sharing valuable insights on web development, software engineering, and emerging technologies.</p>
                         <p>Built and maintained <strong>open-source Laravel packages</strong> that have been adopted by the developer community, collectively surpassing <strong>5,000+ installations</strong>.</p>
@@ -169,7 +192,7 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                         <p className="eyebrow">Writing</p>
                         <h4>Field notes on software architecture, AI systems, and practical engineering decisions, read by thousands of people.</h4>
                     </div>
-                    <div className="article-list">
+                    <div className="article-list bibliography">
                         {loading && <p>Loading recent writing...</p>}
                         {!loading && error && <p>{error}</p>}
                         {!loading && !error && previewArticles.length === 0 && <p>No articles available right now.</p>}

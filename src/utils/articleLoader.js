@@ -1,6 +1,6 @@
 const WORKER_URL = "https://medium-api-worker.rohitsh.workers.dev/";
 const FEED_URL = import.meta.env.DEV ? "/medium-feed" : WORKER_URL;
-const ARTICLE_CACHE_KEY = "rohit-medium-articles-v3";
+const ARTICLE_CACHE_KEY = "rohit-medium-articles-v4";
 const ARTICLE_CACHE_TIME_KEY = "rohit-medium-articles-saved-at";
 const ARTICLE_FRESHNESS_MS = 1000 * 60 * 60 * 2;
 
@@ -69,6 +69,7 @@ export async function loadArticles() {
                 author: item.author || "",
                 description,
                 preview: truncate(description, 180),
+                categories: Array.isArray(item.categories) ? item.categories : [],
             };
         });
 

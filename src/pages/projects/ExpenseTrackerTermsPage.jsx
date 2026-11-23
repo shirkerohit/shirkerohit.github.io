@@ -20,7 +20,7 @@ export default function ExpenseTrackerTermsPage({ theme, onToggleTheme }) {
                     <span className="breadcrumb-current">Terms & Conditions</span>
                 </nav>
 
-                <header className="legal-header">
+                <header className="legal-header doc-masthead">
                     <div className="legal-header-meta">
                         <span className="doc-type-tag">Terms & Conditions</span>
                         <span className="last-updated">Last Updated: September 23, 2026</span>

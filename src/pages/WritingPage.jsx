@@ -2,8 +2,13 @@ import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import ArticleCard from '../components/ArticleCard';
 import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
 export default function WritingPage({ articles, loading, error, theme, onToggleTheme }) {
+    useEffect(() => {
+        document.title = 'Writing | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
+    }, []);
+
     return (
         <>
             <TopBar variant="inner" theme={theme} onToggleTheme={onToggleTheme} />
@@ -13,7 +18,7 @@ export default function WritingPage({ articles, loading, error, theme, onToggleT
                         <p className="eyebrow">Writing</p>
                         <h3>Field notes on software architecture, AI systems, and practical engineering decisions.</h3>
                     </div>
-                    <div className="article-list">
+                    <div className="article-list bibliography">
                         {loading && <p>Loading articles...</p>}
                         {!loading && error && <p>{error}</p>}
                         {!loading && !error && articles.length === 0 && <p>No articles available right now.</p>}

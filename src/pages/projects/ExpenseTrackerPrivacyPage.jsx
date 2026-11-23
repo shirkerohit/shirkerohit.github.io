@@ -20,7 +20,7 @@ export default function ExpenseTrackerPrivacyPage({ theme, onToggleTheme }) {
                     <span className="breadcrumb-current">Privacy Policy</span>
                 </nav>
 
-                <header className="legal-header">
+                <header className="legal-header doc-masthead">
                     <div className="legal-header-meta">
                         <span className="doc-type-tag">Privacy Policy</span>
                         <span className="last-updated">Last Updated: September 23, 2026</span>
