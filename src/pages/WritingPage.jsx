@@ -4,6 +4,10 @@ import ArticleCard from '../components/ArticleCard';
 import Footer from '../components/Footer';
 
 export default function WritingPage({ articles, loading, error, theme, onToggleTheme }) {
+    useEffect(() => {
+        document.title = 'Writing | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
+    }, []);
+
     return (
         <>
             <TopBar variant="inner" theme={theme} onToggleTheme={onToggleTheme} />

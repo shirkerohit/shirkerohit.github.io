@@ -4,6 +4,10 @@ import Footer from '../components/Footer';
 import books from '../data/books.json';
 
 export default function BookshelfPage({ theme, onToggleTheme }) {
+    useEffect(() => {
+        document.title = 'Bookshelf | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
+    }, []);
+
     return (
         <>
             <TopBar variant="inner" theme={theme} onToggleTheme={onToggleTheme} />

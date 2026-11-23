@@ -6,7 +6,7 @@ import { PROJECTS } from '../data/projects';
 
 export default function ProjectsPage({ theme, onToggleTheme }) {
     useEffect(() => {
-        document.title = 'Projects | Rohit Shirke';
+        document.title = 'Projects | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
     }, []);
 
     return (
