@@ -2,6 +2,7 @@ import TopBar from '../components/TopBar';
 import BookCard from '../components/BookCard';
 import Footer from '../components/Footer';
 import books from '../data/books.json';
+import { useEffect } from 'react';
 
 export default function BookshelfPage({ theme, onToggleTheme }) {
     useEffect(() => {

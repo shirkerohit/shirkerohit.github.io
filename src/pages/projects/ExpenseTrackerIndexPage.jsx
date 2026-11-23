@@ -18,7 +18,7 @@ export default function ExpenseTrackerIndexPage({ theme, onToggleTheme }) {
                     <span className="breadcrumb-current">Expense Tracker</span>
                 </nav>
 
-                <section className="project-hero">
+                <section className="project-hero doc-masthead">
                     <div className="project-hero-badge">
                         <span className="badge-icon">💰</span>
                         <span className="badge-text">Local-First Mobile & Web App</span>

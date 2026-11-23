@@ -11,6 +11,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                     <Link className="brand" to="/">
                         Rohit Shirke
                     </Link>
+                    <p className="brand-subtitle">Architechure / engineering</p>
                 </div>
 
                 <div className="topbar-controls">
@@ -40,7 +41,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                         <>
                             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
                             <a href="#writing" onClick={() => setMenuOpen(false)}>Writing</a>
-                            <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+                            {/* <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link> */}
                             <Link to="/bookshelf" onClick={() => setMenuOpen(false)}>Bookshelf</Link>
                             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
                         </>
@@ -48,7 +49,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                         <>
                             <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
                             <Link to="/writing" onClick={() => setMenuOpen(false)}>Writing</Link>
-                            <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+                            {/* <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link> */}
                             <Link to="/bookshelf" onClick={() => setMenuOpen(false)}>Bookshelf</Link>
                             <a href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
                         </>
