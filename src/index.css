@@ -663,6 +663,107 @@ h6 {
     text-decoration-color: var(--accent);
 }
 
+.impact-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    background: var(--border);
+}
+
+.impact-metric {
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+}
+
+.impact-metric strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--accent);
+}
+
+.impact-metric span {
+    display: block;
+    margin-top: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.artifact-list {
+    list-style: none;
+    max-width: 880px;
+    margin: 0;
+    padding: 0;
+}
+
+.artifact-list li {
+    padding: 0.7rem 0 0.7rem 1rem;
+    border-left: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.artifact-list li:last-child {
+    border-bottom: none;
+}
+
+.artifact-list strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.artifact-list a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 180ms ease;
+}
+
+.artifact-list a:hover {
+    text-decoration-color: var(--accent);
+}
+
+.topic-index {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 1.25rem;
+}
+
+.topic-label {
+    margin-right: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.topic-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--surface) 55%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+}
+
 @keyframes blink-caret {
     50% {
         opacity: 0;
@@ -1091,6 +1192,14 @@ h6 {
     .impact-list {
         margin-top: 1.25rem;
         padding-top: 1.25rem;
+    }
+
+    .impact-metric {
+        padding: 0.75rem 0.85rem;
+    }
+
+    .topic-index {
+        margin-bottom: 1rem;
     }
 
     .article-list {
