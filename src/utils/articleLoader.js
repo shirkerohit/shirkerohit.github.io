@@ -35,20 +35,43 @@ function truncate(text, limit) {
     return `${text.slice(0, limit - 3)}...`;
 }
 
+function readCachedArticles() {
+    try {
+        const raw = window.localStorage.getItem(ARTICLE_CACHE_KEY);
+        const parsed = raw ? JSON.parse(raw) : null;
+        return Array.isArray(parsed) ? parsed : null;
+    } catch {
+        return null;
+    }
+}
+
+function readCacheTimestamp() {
+    try {
+        return Number(window.localStorage.getItem(ARTICLE_CACHE_TIME_KEY)) || 0;
+    } catch {
+        return 0;
+    }
+}
+
+function writeCachedArticles(articles) {
+    try {
+        window.localStorage.setItem(ARTICLE_CACHE_KEY, JSON.stringify(articles));
+        window.localStorage.setItem(ARTICLE_CACHE_TIME_KEY, String(Date.now()));
+    } catch {
+        // Storage may be unavailable or full. The feed still works without a cache.
+    }
+}
+
 export async function loadArticles() {
     if (typeof window === "undefined") {
         return [];
     }
 
-    const cachedArticles = window.localStorage.getItem(ARTICLE_CACHE_KEY);
-    const savedAt = window.localStorage.getItem(ARTICLE_CACHE_TIME_KEY);
+    const cachedArticles = readCachedArticles();
+    const savedAt = readCacheTimestamp();
 
-    if (
-        cachedArticles &&
-        savedAt &&
-        Date.now() - Number(savedAt) < ARTICLE_FRESHNESS_MS
-    ) {
-        return JSON.parse(cachedArticles);
+    if (cachedArticles && savedAt && Date.now() - savedAt < ARTICLE_FRESHNESS_MS) {
+        return cachedArticles;
     }
 
     const response = await fetch(FEED_URL);
@@ -73,8 +96,7 @@ export async function loadArticles() {
             };
         });
 
-    window.localStorage.setItem(ARTICLE_CACHE_KEY, JSON.stringify(normalized));
-    window.localStorage.setItem(ARTICLE_CACHE_TIME_KEY, String(Date.now()));
+    writeCachedArticles(normalized);
 
     return normalized;
 }

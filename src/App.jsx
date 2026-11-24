@@ -1,14 +1,25 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import WritingPage from './pages/WritingPage';
 import BookshelfPage from './pages/BookshelfPage';
 import ProjectsPage from './pages/ProjectsPage';
+import NotFoundPage from './pages/NotFoundPage';
 import ExpenseTrackerIndexPage from './pages/projects/ExpenseTrackerIndexPage';
 import ExpenseTrackerPrivacyPage from './pages/projects/ExpenseTrackerPrivacyPage';
 import ExpenseTrackerTermsPage from './pages/projects/ExpenseTrackerTermsPage';
 import { loadArticles } from './utils/articleLoader';
+
+function focusMainContent(event) {
+    event.preventDefault();
+    const main = document.querySelector('main');
+    if (!main) {
+        return;
+    }
+    main.setAttribute('tabindex', '-1');
+    main.focus();
+}
 
 function App() {
     const [theme, setTheme] = useState(() => {
@@ -16,7 +27,16 @@ function App() {
             return 'light';
         }
 
-        return window.localStorage.getItem('theme') || 'light';
+        const storedTheme = window.localStorage.getItem('theme');
+        if (storedTheme) {
+            return storedTheme;
+        }
+
+        if (typeof window.matchMedia === 'function' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+
+        return 'light';
     });
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,6 +45,11 @@ function App() {
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         window.localStorage.setItem('theme', theme);
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+            themeColor.setAttribute('content', theme === 'dark' ? '#121518' : '#275044');
+        }
     }, [theme]);
 
     useEffect(() => {
@@ -46,7 +71,10 @@ function App() {
 
     return (
         <div className="app-shell">
-            <HashRouter>
+            <a className="skip-link" href="#main-content" onClick={focusMainContent}>
+                Skip to content
+            </a>
+            <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
                     <Route
@@ -126,7 +154,7 @@ function App() {
                         )}
                     />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         </div>
     );
 }

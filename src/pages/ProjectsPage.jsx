@@ -1,13 +1,15 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Footer from '../components/Footer';
 import { PROJECTS } from '../data/projects';
+import { usePageMeta } from '../utils/pageMeta';
 
 export default function ProjectsPage({ theme, onToggleTheme }) {
-    useEffect(() => {
-        document.title = 'Projects | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
-    }, []);
+    usePageMeta(
+        'Projects | Rohit Shirke | Senior Software Engineer & AI Enthusiast',
+        "A showcase of applications, developer tools, and privacy-focused services I'm actively building.",
+        '/projects',
+    );
 
     return (
         <>

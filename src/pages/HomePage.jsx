@@ -47,7 +47,10 @@ const socialLinks = [
 
 export default function HomePage({ articles, loading, error, theme, onToggleTheme }) {
     const previewArticles = articles.slice(0, 5);
-    const [heroCopy, setHeroCopy] = useState('');
+    const prefersReducedMotion = typeof window !== 'undefined'
+        && typeof window.matchMedia === 'function'
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const [heroCopy, setHeroCopy] = useState(prefersReducedMotion ? HERO_COPY_TEXT : '');
 
     useEffect(() => {
         // Primary title targeting all name variations
@@ -99,6 +102,10 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
     }, []);
 
     useEffect(() => {
+        if (prefersReducedMotion) {
+            return undefined;
+        }
+
         let index = 0;
         const intervalId = window.setInterval(() => {
             index += 1;
@@ -110,7 +117,7 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
         }, 24);
 
         return () => window.clearInterval(intervalId);
-    }, []);
+    }, [prefersReducedMotion]);
 
     return (
         <>

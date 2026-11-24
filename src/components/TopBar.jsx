@@ -1,8 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function TopBar({ variant, theme, onToggleTheme }) {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navRef = useRef(null);
+
+    useEffect(() => {
+        if (!menuOpen) {
+            return undefined;
+        }
+
+        const closeOnEscape = (event) => {
+            if (event.key === 'Escape') {
+                setMenuOpen(false);
+            }
+        };
+        const closeOnOutsideClick = (event) => {
+            if (navRef.current?.contains(event.target)) {
+                return;
+            }
+            if (event.target.closest?.('.hamburger')) {
+                return;
+            }
+            setMenuOpen(false);
+        };
+
+        document.addEventListener('keydown', closeOnEscape);
+        document.addEventListener('pointerdown', closeOnOutsideClick);
+        return () => {
+            document.removeEventListener('keydown', closeOnEscape);
+            document.removeEventListener('pointerdown', closeOnOutsideClick);
+        };
+    }, [menuOpen]);
 
     return (
         <header className="topbar">
@@ -11,7 +40,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                     <Link className="brand" to="/">
                         Rohit Shirke
                     </Link>
-                    <p className="brand-subtitle">Architechure / engineering</p>
+                    <p className="brand-subtitle">Architecture / engineering</p>
                 </div>
 
                 <div className="topbar-controls">
@@ -29,6 +58,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                         onClick={() => setMenuOpen((prev) => !prev)}
                         aria-label="Toggle menu"
                         aria-expanded={menuOpen}
+                        aria-controls="primary-navigation"
                     >
                         <span />
                         <span />
@@ -36,7 +66,12 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                     </button>
                 </div>
 
-                <nav className={`nav-links ${menuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
+                <nav
+                    ref={navRef}
+                    id="primary-navigation"
+                    className={`nav-links ${menuOpen ? 'is-open' : ''}`}
+                    aria-label="Primary navigation"
+                >
                     {variant === 'home' ? (
                         <>
                             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
@@ -51,7 +86,7 @@ export default function TopBar({ variant, theme, onToggleTheme }) {
                             <Link to="/writing" onClick={() => setMenuOpen(false)}>Writing</Link>
                             {/* <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link> */}
                             <Link to="/bookshelf" onClick={() => setMenuOpen(false)}>Bookshelf</Link>
-                            <a href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+                            <Link to="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
                         </>
                     )}
                     <button
