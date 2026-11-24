@@ -78,6 +78,18 @@ function App() {
                 <ScrollToTop />
                 <Routes>
                     <Route
+                        path="/"
+                        element={(
+                            <HomePage
+                                articles={articles}
+                                loading={loading}
+                                error={error}
+                                theme={theme}
+                                onToggleTheme={toggleTheme}
+                            />
+                        )}
+                    />
+                    <Route
                         path="/writing"
                         element={(
                             <WritingPage
@@ -143,15 +155,7 @@ function App() {
 
                     <Route
                         path="*"
-                        element={(
-                            <HomePage
-                                articles={articles}
-                                loading={loading}
-                                error={error}
-                                theme={theme}
-                                onToggleTheme={toggleTheme}
-                            />
-                        )}
+                        element={<NotFoundPage theme={theme} onToggleTheme={toggleTheme} />}
                     />
                 </Routes>
             </BrowserRouter>

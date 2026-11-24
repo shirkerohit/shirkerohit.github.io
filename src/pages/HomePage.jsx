@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import ArticleCard from '../components/ArticleCard';
+import LatestPosts from '../components/LatestPosts';
 import Footer from '../components/Footer';
 
 const HERO_COPY_TEXT = 'I build backend systems, AI-native products, and developer tools with a bias for reliability, observability, and practical usefulness...';
@@ -153,111 +154,116 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                     </aside>
                 </section>
 
-                <section id="about" className="section">
-                    <div className="section-heading">
-                        <p className="eyebrow">About</p>
-                    </div>
-                    <div className="about">
-                        <p>
-                            I'm a Software Engineer and Tech Lead with <strong>10+ years of experience</strong> designing, building, and scaling production-grade software across <strong>system architecture</strong>, <strong>backend engineering</strong>, <strong>cloud infrastructure</strong>, <strong>APIs</strong>, and <strong>modern frontend technologies</strong>.
-                        </p>
-                        <p>
-                            Over the years, I've worked across the engineering stack, from architecting <strong>distributed systems</strong>, <strong>microservices</strong>, and <strong>event-driven architectures</strong> to building <strong>cloud-native platforms</strong> and high-performance applications. My experience spans different product domains, including <strong>fintech and financial workflows</strong>, <strong>consumer-facing platforms</strong>, <strong>SaaS products</strong>, and business-driven applications, giving me exposure to solving diverse technical and product challenges. My approach goes beyond making systems work. I focus on designing solutions that scale with business needs, perform reliably under pressure, and remain maintainable as complexity grows. I enjoy breaking down complex problems, making thoughtful architectural decisions, and turning ideas into production-ready products.
-                        </p>
-                        <p>
-                            I currently lead engineering work across product domains, with recent focus on <strong>AI-native software</strong>: <strong>LLM applications</strong>, <strong>RAG systems</strong>, <strong>agentic workflows</strong>, <strong>orchestration</strong>, <strong>evaluation pipelines</strong>, and integrating AI capabilities into existing product ecosystems.
-                        </p>
-                        <p>
-                            Beyond my professional work, I enjoy building and experimenting with side projects - from AI-powered tools and productivity applications to personal finance solutions and developer utilities. I use these projects to explore emerging technologies, validate ideas, and turn practical problems into working products.
-                        </p>
-                    </div>
-                    <div className="technical-interests">
-                        <h4>Technical interests</h4>
-                        <div className="tag-list">
-                            <span>LLMs</span>
-                            <span>RAG</span>
-                            <span>Agents</span>
-                            <span>Distributed systems</span>
-                            <span>APIs</span>
-                            <span>Cloud platforms</span>
-                            <span>Evaluation pipelines</span>
-                            <span>Developer experience</span>
+                <div className="home-content-grid">
+                    <section id="about" className="section">
+                        <div className="section-heading">
+                            <p className="eyebrow">About</p>
                         </div>
-                    </div>
-                    <div className="impact-list" aria-label="Selected impact">
-                        <h4>Selected work</h4>
-                        <div className="impact-metrics">
-                            <div className="impact-metric">
-                                <strong>10+</strong>
-                                <span>years in software engineering</span>
-                            </div>
-                            <div className="impact-metric">
-                                <strong>34K+</strong>
-                                <span>article views</span>
-                            </div>
-                            <div className="impact-metric">
-                                <strong>16K+</strong>
-                                <span>article reads</span>
+                        <div className="about">
+                            <p>
+                                I'm a Software Engineer and Tech Lead with <strong>10+ years of experience</strong> designing, building, and scaling production-grade software across <strong>system architecture</strong>, <strong>backend engineering</strong>, <strong>cloud infrastructure</strong>, <strong>APIs</strong>, and <strong>modern frontend technologies</strong>.
+                            </p>
+                            <p>
+                                Over the years, I've worked across the engineering stack, from architecting <strong>distributed systems</strong>, <strong>microservices</strong>, and <strong>event-driven architectures</strong> to building <strong>cloud-native platforms</strong> and high-performance applications. My experience spans different product domains, including <strong>fintech and financial workflows</strong>, <strong>consumer-facing platforms</strong>, <strong>SaaS products</strong>, and business-driven applications, giving me exposure to solving diverse technical and product challenges. My approach goes beyond making systems work. I focus on designing solutions that scale with business needs, perform reliably under pressure, and remain maintainable as complexity grows. I enjoy breaking down complex problems, making thoughtful architectural decisions, and turning ideas into production-ready products.
+                            </p>
+                            <p>
+                                I currently lead engineering work across product domains, with recent focus on <strong>AI-native software</strong>: <strong>LLM applications</strong>, <strong>RAG systems</strong>, <strong>agentic workflows</strong>, <strong>orchestration</strong>, <strong>evaluation pipelines</strong>, and integrating AI capabilities into existing product ecosystems.
+                            </p>
+                            <p>
+                                Beyond my professional work, I enjoy building and experimenting with side projects - from AI-powered tools and productivity applications to personal finance solutions and developer utilities. I use these projects to explore emerging technologies, validate ideas, and turn practical problems into working products.
+                            </p>
+                        </div>
+                        <div className="technical-interests">
+                            <h4>Technical interests</h4>
+                            <div className="tag-list">
+                                <span>LLMs</span>
+                                <span>RAG</span>
+                                <span>Agents</span>
+                                <span>Distributed systems</span>
+                                <span>APIs</span>
+                                <span>Cloud platforms</span>
+                                <span>Evaluation pipelines</span>
+                                <span>Developer experience</span>
                             </div>
                         </div>
-                        <ul className="artifact-list">
-                            <li>
-                                Recognized as a <strong>LinkedIn Top Voice</strong> for consistently sharing valuable insights on web development, software engineering, and emerging technologies.
-                            </li>
-                            <li>
-                                Built and maintained <strong>open-source Laravel packages</strong> adopted by the developer community, surpassing <strong>5,000+ installations</strong>.
-                            </li>
-                            <li>
-                                Published a <a href="https://microsoftedge.microsoft.com/addons/search?developer=Rohit%20S." target="_blank" rel="noreferrer"><strong>browser productivity extension</strong></a> with <strong>500+ active installations</strong> that streamlines everyday workflows.
-                            </li>
-                            <li>
-                                Published a <a href="https://marketplace.visualstudio.com/items?itemName=RohitShirke.secret-masker" target="_blank" rel="noreferrer"><strong>VS Code extension</strong></a> that masks secrets across configuration files.
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                        <div className="impact-list" aria-label="Selected impact">
+                            <h4>Selected work</h4>
+                            <div className="impact-metrics">
+                                <div className="impact-metric">
+                                    <strong>10+</strong>
+                                    <span>years in software engineering</span>
+                                </div>
+                                <div className="impact-metric">
+                                    <strong>34K+</strong>
+                                    <span>article views</span>
+                                </div>
+                                <div className="impact-metric">
+                                    <strong>16K+</strong>
+                                    <span>article reads</span>
+                                </div>
+                            </div>
+                            <ul className="artifact-list">
+                                <li>
+                                    Recognized as a <strong>LinkedIn Top Voice</strong> for consistently sharing valuable insights on web development, software engineering, and emerging technologies.
+                                </li>
+                                <li>
+                                    Built and maintained <strong>open-source Laravel packages</strong> adopted by the developer community, surpassing <strong>5,000+ installations</strong>.
+                                </li>
+                                <li>
+                                    Published a <a href="https://microsoftedge.microsoft.com/addons/search?developer=Rohit%20S." target="_blank" rel="noreferrer"><strong>browser productivity extension</strong></a> with <strong>500+ active installations</strong> that streamlines everyday workflows.
+                                </li>
+                                <li>
+                                    Published a <a href="https://marketplace.visualstudio.com/items?itemName=RohitShirke.secret-masker" target="_blank" rel="noreferrer"><strong>VS Code extension</strong></a> that masks secrets across configuration files.
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
 
-                <section id="writing" className="section">
-                    <div className="section-heading">
-                        <p className="eyebrow">Writing</p>
-                        <h4>Field notes on software architecture, AI systems, and practical engineering decisions, read by thousands of people.</h4>
-                    </div>
-                    <div className="article-list bibliography">
-                        {loading && <p>Loading recent writing...</p>}
-                        {!loading && error && <p>{error}</p>}
-                        {!loading && !error && previewArticles.length === 0 && <p>No articles available right now.</p>}
-                        {!loading && !error && previewArticles.map((article) => (
-                            <ArticleCard key={article.link} article={article} />
-                        ))}
-                    </div>
-                    <div className="section-links">
-                        <Link className="primary-link" to="/writing">
-                            More writing
-                        </Link>
-                        <a className="secondary-link" href="https://rohit-shirke.medium.com/" target="_blank" rel="noreferrer">
-                            Read on Medium
-                        </a>
-                    </div>
-                </section>
-
-                <section id="contact" className="section">
-                    <div className="section-heading">
-                        <p className="eyebrow">Contact</p>
-                    </div>
-                    <div className="contact-card">
-                        <p>
-                            You can find me on any of the below channels. Let&apos;s say "hello".
-                        </p>
-                        <div className="social-links">
-                            {socialLinks.map((item) => (
-                                <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label}>
-                                    {item.icon}
-                                    <span>{item.label}</span>
-                                </a>
+                    <section id="writing" className="section">
+                        <div className="section-heading">
+                            <p className="eyebrow">Writing</p>
+                            <h4>Field notes on software architecture, AI systems, and practical engineering decisions, read by thousands of people.</h4>
+                        </div>
+                        <div className="article-list bibliography">
+                            {loading && <p>Loading recent writing...</p>}
+                            {!loading && error && <p>{error}</p>}
+                            {!loading && !error && previewArticles.length === 0 && <p>No articles available right now.</p>}
+                            {!loading && !error && previewArticles.map((article) => (
+                                <ArticleCard key={article.link} article={article} />
                             ))}
                         </div>
-                    </div>
-                </section>
+                        <div className="section-links">
+                            <Link className="primary-link" to="/writing">
+                                More writing
+                            </Link>
+                            <a className="secondary-link" href="https://rohit-shirke.medium.com/" target="_blank" rel="noreferrer">
+                                Read on Medium
+                            </a>
+                        </div>
+                    </section>
+
+                    <aside className="home-sidebar">
+                        <LatestPosts />
+                    </aside>
+                    <section id="contact" className="section">
+                        <div className="section-heading">
+                            <p className="eyebrow">Contact</p>
+                        </div>
+                        <div className="contact-card">
+                            <p>
+                                You can find me on any of the below channels. Let&apos;s say "hello".
+                            </p>
+                            <div className="social-links">
+                                {socialLinks.map((item) => (
+                                    <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label}>
+                                        {item.icon}
+                                        <span>{item.label}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </main>
 
             <Footer />

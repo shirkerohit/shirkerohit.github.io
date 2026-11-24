@@ -1,0 +1,33 @@
+# Rohit Shirke
+
+> Senior Software Engineer and AI specialist based in Mumbai, with 10+ years building backend systems, distributed services, and AI-native products. Formerly with Shaadi.com. Writes about LLM applications, RAG, agentic workflows, evaluation pipelines, and practical software architecture.
+
+This site contains an about section, technical writing, a bookshelf, personal projects, and a live feed of recent public posts.
+
+## Site
+
+- [Home](https://shirkerohit.github.io/): Introduction, selected work, technical interests, and recent posts on X.
+- [Writing](https://shirkerohit.github.io/writing): Field notes on software architecture, AI systems, and practical engineering decisions.
+- [Bookshelf](https://shirkerohit.github.io/bookshelf): Books on programming, databases, distributed systems, and personal development.
+- [Projects](https://shirkerohit.github.io/projects): Applications and developer tools, including a local-first expense tracker.
+
+## Focus areas
+
+- LLM applications and evaluation pipelines
+- Retrieval-augmented generation (RAG)
+- Agentic workflows and orchestration
+- System architecture, microservices, and distributed systems
+- Backend engineering, APIs, and cloud infrastructure
+- Developer experience and practical tooling
+
+## Machine-readable feeds
+
+- [Medium articles (JSON)](https://medium-api-worker.rohitsh.workers.dev/): Recent articles with titles, links, categories, publication dates, and images.
+- [X posts (JSON)](https://x-feed-worker.rohitsh.workers.dev/): Recent public posts with quoted context and IST timestamps.
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/rohit-shirke/)
+- [GitHub](https://github.com/shirkerohit)
+- [Medium](https://rohit-shirke.medium.com/)
+- [X](https://x.com/rohit_p_shirke)

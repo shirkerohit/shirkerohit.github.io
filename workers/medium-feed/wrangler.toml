@@ -1,0 +1,3 @@
+name = "medium-api-worker"
+main = "index.js"
+compatibility_date = "2026-11-24"
