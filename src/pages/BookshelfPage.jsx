@@ -2,12 +2,14 @@ import TopBar from '../components/TopBar';
 import BookCard from '../components/BookCard';
 import Footer from '../components/Footer';
 import books from '../data/books.json';
-import { useEffect } from 'react';
+import { usePageMeta } from '../utils/pageMeta';
 
 export default function BookshelfPage({ theme, onToggleTheme }) {
-    useEffect(() => {
-        document.title = 'Bookshelf | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
-    }, []);
+    usePageMeta(
+        'Bookshelf | Rohit Shirke | Senior Software Engineer & AI Enthusiast',
+        'Books that shaped how I think about systems, leadership, and life.',
+        '/bookshelf',
+    );
 
     return (
         <>

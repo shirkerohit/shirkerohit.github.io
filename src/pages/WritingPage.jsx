@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import ArticleCard from '../components/ArticleCard';
 import Footer from '../components/Footer';
-import { useEffect } from 'react';
+import { usePageMeta } from '../utils/pageMeta';
 
 export default function WritingPage({ articles, loading, error, theme, onToggleTheme }) {
-    useEffect(() => {
-        document.title = 'Writing | Rohit Shirke | Senior Software Engineer & AI Enthusiast';
-    }, []);
+    usePageMeta(
+        'Writing | Rohit Shirke | Senior Software Engineer & AI Enthusiast',
+        'Field notes on software architecture, AI systems, and practical engineering decisions.',
+        '/writing',
+    );
 
     const topicCounts = articles.reduce((counts, article) => {
         (article.categories || []).forEach((tag) => {
