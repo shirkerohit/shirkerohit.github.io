@@ -52,7 +52,7 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
     useEffect(() => {
         // Primary title targeting all name variations
         const title = 'Rohit Shirke | Senior Software Engineer & AI Enthusiast';
-        const description = 'Rohit Shirke - Senior Software Engineer at Google, Mumbai. 10+ years experience building reliable web applications, backend systems, and AI-native products. LinkedIn Top Voice. 34K+ article views. Open-source maintainer with 5K+ installations. Browser extension & VS Code extension author.';
+        const description = 'Rohit Shirke - Senior Software Engineer & AI Specialist, Mumbai, formerly with Shaadi.com. 10+ years experience building reliable web applications, backend systems, and AI-native products. LinkedIn Top Voice. 34K+ article views. Open-source maintainer with 5K+ installations. Browser extension & VS Code extension author.';
 
         document.title = title;
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -179,11 +179,34 @@ export default function HomePage({ articles, loading, error, theme, onToggleThem
                     </div>
                     <div className="impact-list" aria-label="Selected impact">
                         <h4>Selected work</h4>
-                        <p>Published technical articles with <strong>34K+ views</strong> and <strong>16K+ reads</strong></p>
-                        <p>Recognized as a <strong>LinkedIn Top Voice</strong> for consistently sharing valuable insights on web development, software engineering, and emerging technologies.</p>
-                        <p>Built and maintained <strong>open-source Laravel packages</strong> that have been adopted by the developer community, collectively surpassing <strong>5,000+ installations</strong>.</p>
-                        <p>Designed, developed, and published a <a href="https://microsoftedge.microsoft.com/addons/search?developer=Rohit%20S." target="_blank" rel="noreferrer"><strong>browser productivity extension</strong></a> with <strong>500+ active installations</strong>, delivering practical features that streamline everyday workflows.</p>
-                        <p>Published productivity based <a href="https://marketplace.visualstudio.com/items?itemName=RohitShirke.secret-masker" target="_blank" rel="noreferrer"><strong>VS Code extension</strong></a> that lets you mask the secrete across configuration files.</p>
+                        <div className="impact-metrics">
+                            <div className="impact-metric">
+                                <strong>10+</strong>
+                                <span>years in software engineering</span>
+                            </div>
+                            <div className="impact-metric">
+                                <strong>34K+</strong>
+                                <span>article views</span>
+                            </div>
+                            <div className="impact-metric">
+                                <strong>16K+</strong>
+                                <span>article reads</span>
+                            </div>
+                        </div>
+                        <ul className="artifact-list">
+                            <li>
+                                Recognized as a <strong>LinkedIn Top Voice</strong> for consistently sharing valuable insights on web development, software engineering, and emerging technologies.
+                            </li>
+                            <li>
+                                Built and maintained <strong>open-source Laravel packages</strong> adopted by the developer community, surpassing <strong>5,000+ installations</strong>.
+                            </li>
+                            <li>
+                                Published a <a href="https://microsoftedge.microsoft.com/addons/search?developer=Rohit%20S." target="_blank" rel="noreferrer"><strong>browser productivity extension</strong></a> with <strong>500+ active installations</strong> that streamlines everyday workflows.
+                            </li>
+                            <li>
+                                Published a <a href="https://marketplace.visualstudio.com/items?itemName=RohitShirke.secret-masker" target="_blank" rel="noreferrer"><strong>VS Code extension</strong></a> that masks secrets across configuration files.
+                            </li>
+                        </ul>
                     </div>
                 </section>
 
