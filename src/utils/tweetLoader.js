@@ -3,7 +3,11 @@ const CACHE_KEY = 'rohit-x-posts-v1';
 const CACHE_TIME_KEY = 'rohit-x-posts-saved-at';
 const CACHE_MAX_AGE = 1000 * 60 * 15;
 
-function readCache() {
+export function readCachedPosts() {
+    if (typeof window === 'undefined') {
+        return null;
+    }
+
     try {
         const raw = window.localStorage.getItem(CACHE_KEY);
         const parsed = raw ? JSON.parse(raw) : null;
@@ -13,11 +17,16 @@ function readCache() {
     }
 }
 
-function readCacheTime() {
+export function isCacheFresh() {
+    if (typeof window === 'undefined' || !readCachedPosts()) {
+        return false;
+    }
+
     try {
-        return Number(window.localStorage.getItem(CACHE_TIME_KEY)) || 0;
+        const savedAt = Number(window.localStorage.getItem(CACHE_TIME_KEY)) || 0;
+        return Date.now() - savedAt < CACHE_MAX_AGE;
     } catch {
-        return 0;
+        return false;
     }
 }
 
@@ -31,16 +40,6 @@ function writeCache(posts) {
 }
 
 export async function loadPosts() {
-    if (typeof window === 'undefined') {
-        return [];
-    }
-
-    const cached = readCache();
-    const savedAt = readCacheTime();
-    if (cached && savedAt && Date.now() - savedAt < CACHE_MAX_AGE) {
-        return cached;
-    }
-
     const response = await fetch(FEED_URL);
     if (!response.ok) {
         throw new Error(`Feed request failed with status ${response.status}`);

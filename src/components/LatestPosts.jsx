@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react';
-import { loadPosts } from '../utils/tweetLoader';
+import { isCacheFresh, loadPosts, readCachedPosts } from '../utils/tweetLoader';
 
 const PROFILE_URL = 'https://x.com/rohit_p_shirke';
 
 export default function LatestPosts() {
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [feed, setFeed] = useState(() => {
+        const cached = readCachedPosts();
+        return { posts: cached || [], loading: !cached, error: '' };
+    });
 
     useEffect(() => {
+        if (isCacheFresh()) {
+            return undefined;
+        }
+
         let active = true;
 
         loadPosts()
             .then((items) => {
                 if (active) {
-                    setPosts(items);
+                    setFeed({ posts: items, loading: false, error: '' });
                 }
             })
             .catch(() => {
                 if (active) {
-                    setError('Feed unavailable right now.');
-                }
-            })
-            .finally(() => {
-                if (active) {
-                    setLoading(false);
+                    setFeed((current) => ({ ...current, loading: false, error: 'Feed unavailable right now.' }));
                 }
             });
 
@@ -32,6 +32,8 @@ export default function LatestPosts() {
             active = false;
         };
     }, []);
+
+    const { posts, loading, error } = feed;
 
     return (
         <div className="posts-widget">
@@ -41,12 +43,7 @@ export default function LatestPosts() {
                 <span className="feed-handle">@rohit_p_shirke</span>
             </div>
             <div className="rail-post-list">
-                {loading && <p className="feed-message">Loading feed...</p>}
-                {!loading && error && <p className="feed-message">{error}</p>}
-                {!loading && !error && posts.length === 0 && (
-                    <p className="feed-message">No posts available right now.</p>
-                )}
-                {!loading && !error && posts.map((post) => (
+                {posts.map((post) => (
                     <article className="rail-post" key={post.url}>
                         <time className="rail-post-date" dateTime={post.date}>
                             {post.time || post.date}
@@ -60,6 +57,11 @@ export default function LatestPosts() {
                         </a>
                     </article>
                 ))}
+                {loading && posts.length === 0 && <p className="feed-message">Loading feed...</p>}
+                {!loading && posts.length === 0 && error && <p className="feed-message">{error}</p>}
+                {!loading && posts.length === 0 && !error && (
+                    <p className="feed-message">No posts available right now.</p>
+                )}
             </div>
             <a className="rail-follow" href={PROFILE_URL} target="_blank" rel="noreferrer">
                 Follow for updates on X ↗
