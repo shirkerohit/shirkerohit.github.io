@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /projects/expense-tracker/privacy
+Disallow: /projects/expense-tracker/terms
+
+Sitemap: https://shirkerohit.github.io/sitemap.xml
