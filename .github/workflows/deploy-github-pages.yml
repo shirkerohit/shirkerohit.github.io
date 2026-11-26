@@ -1,9 +1,8 @@
-name: Deploy GitHub Pages
+# Legacy gh-pages-branch deployment. Manual only: static.yml handles automatic
+# deploys on pushes/merges to master through the official GitHub Pages action.
+name: Deploy to gh-pages branch (manual)
 
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
